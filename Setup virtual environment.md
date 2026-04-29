@@ -1,41 +1,45 @@
-YOLOv8 Real-Time Webcam Inference Setup
+# YOLOv8 Real-Time Webcam Inference Setup
+
 This repository contains a lightweight Python script to run real-time object detection using the pre-trained YOLOv8 Nano model via a laptop webcam.
 
-Prerequisites
-Python 3.8+ installed
+## Prerequisites
+* Python 3.8+ installed
+* Built-in or external USB webcam
 
-Built-in or external USB webcam
+---
 
-Step 1: Project Setup
+## Step 1: Project Setup
 Open your terminal and create a dedicated project directory.
 
-Bash
+```bash
 mkdir YOLO-Webcam-Test
 cd YOLO-Webcam-Test
-Step 2: Virtual Environment
+```
+
+## Step 2: Virtual Environment
 Create and activate a virtual environment to keep dependencies isolated.
 
-Create the environment:
-
-Bash
+**Create the environment:**
+```bash
 python -m venv venv
-Activate the environment:
+```
 
-Windows (Command Prompt): venv\Scripts\activate
+**Activate the environment:**
+* **Windows (Command Prompt):** `venv\Scripts\activate`
+* **Windows (PowerShell):** `.\venv\Scripts\Activate.ps1`
+* **macOS / Linux:** `source venv/bin/activate`
 
-Windows (PowerShell): .\venv\Scripts\Activate.ps1
-
-macOS / Linux: source venv/bin/activate
-
-Step 3: Install Dependencies
+## Step 3: Install Dependencies
 Install the required YOLO and OpenCV libraries.
 
-Bash
+```bash
 pip install ultralytics opencv-python
-Step 4: The Inference Script
-Create a file named main.py in your project folder and add the following code:
+```
 
-Python
+## Step 4: The Inference Script
+Create a file named `main.py` in your project folder and add the following code:
+
+```python
 import cv2
 from ultralytics import YOLO
 
@@ -77,17 +81,20 @@ def main():
 
 if __name__ == "__main__":
     main()
-Step 5: Run the Model
+```
+
+## Step 5: Run the Model
 Execute the script from your terminal:
 
-Bash
+```bash
 python main.py
-(Note: It will automatically download the yolov8n.pt weights file on the very first run).
+```
+*(Note: It will automatically download the `yolov8n.pt` weights file on the very first run).*
 
-Step 6: Shutting Down
-Click on the video window and press q to close the camera feed.
+## Step 6: Shutting Down
+* Click on the video window and press **`q`** to close the camera feed.
+* To exit the Python virtual environment in your terminal, type:
 
-To exit the Python virtual environment in your terminal, type:
-
-Bash
+```bash
 deactivate
+```
