@@ -37,17 +37,18 @@ pip install ultralytics opencv-python
 ```
 
 ## Step 4: The Inference Script
-Create a file named `main.py` in your project folder and add the following code:
+Create a file named `test_original.py` in your project folder and add the following code:
 
 ```python
 import cv2
 from ultralytics import YOLO
 
 def main():
-    # Load the pre-trained YOLOv8 Nano model
+    # 1. Load the pre-trained YOLOv8 Nano model
+    # The script will automatically download 'yolov8n.pt' from the internet the first time this runs.
     model = YOLO('yolov8n.pt') 
 
-    # Initialize the webcam (0 is the default camera)
+    # 2. Initialize the laptop webcam
     cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
@@ -56,26 +57,27 @@ def main():
 
     print("Starting webcam inference... Press 'q' to quit.")
 
-    # Process the video stream frame by frame
+    # 3. Process the video stream
     while True:
         ret, frame = cap.read()
         if not ret:
             print("Error: Failed to grab frame.")
             break
 
-        # Run inference on the current frame
+        # 4. Run inference
         results = model(frame, stream=True)
 
-        # Display the annotated results
+        # 5. Parse and display the results
         for r in results:
+            # Draw the bounding boxes
             annotated_frame = r.plot()
-            cv2.imshow('YOLOv8 Real-Time Inference', annotated_frame)
+            cv2.imshow('Testing Original YOLOv8', annotated_frame)
 
-        # Exit mechanism
+        # 6. Break the loop if 'q' is pressed
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    # Clean up resources
+    # 7. Clean up
     cap.release()
     cv2.destroyAllWindows()
 
@@ -87,7 +89,7 @@ if __name__ == "__main__":
 Execute the script from your terminal:
 
 ```bash
-python main.py
+python test_original.py
 ```
 *(Note: It will automatically download the `yolov8n.pt` weights file on the very first run).*
 
