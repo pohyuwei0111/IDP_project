@@ -68,6 +68,7 @@ Execute the code blocks sequentially in your Colab notebook.
 * Run the cell to unzip the dataset.
 * Run the cell to start the YOLOv8 training command.
 * *Note: Depending on the size of your dataset and the number of epochs, this process will take some time. Monitor the output logs to watch the model learn.*
+<img width="1704" height="596" alt="image" src="https://github.com/user-attachments/assets/1185a40c-643d-4a6a-b171-977967f77745" />
 
 ### **Step 9: Download Your Trained Weights**
 
