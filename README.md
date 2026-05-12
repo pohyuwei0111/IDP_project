@@ -1,2 +1,3 @@
 # IDP_project
-setup virtual environment: [docs/Setup venv.md](docs/Setup venv.md)
+1. [Setup Virtual Environment](docs/setup_venv.md)
+2. [Dataset Labeling to Model Training](docs/ObjectDetection.md)
