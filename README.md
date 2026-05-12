@@ -1,3 +1,2 @@
 # IDP_project
-Model Training
-AutoLabel image: https://github.com/autodistill/autodistill
+setup virtual environment[docs/Setup venv.md](docs/Setup venv.md)
